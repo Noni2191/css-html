@@ -1,0 +1,38 @@
+.container{
+    border: 2px solid black;
+    width: 40rem;
+}
+.content1{
+    border: 2px solid black;
+    padding: 50px;
+    width: 20rem;
+    margin-left: 9px;
+}
+.side{
+    display: flex;
+    gap: 30px;
+}
+.content2{
+    border: 2px solid black;
+    padding: 50px;
+    width: 5rem;
+    margin-left: 9px;
+    margin-top: 6px;
+    margin-bottom: 10px;
+}
+.content3{
+    border: 2px solid black;
+    padding: 50px;
+    width: 5rem;
+    margin-top: 6px;
+    margin-bottom: 10px;
+}
+.content4{
+    border: 2px solid red;
+    padding: 50px;
+    height: 9rem;
+        width: 5rem;
+        position: absolute;
+        left: 28rem;
+        bottom: 29rem;
+}
