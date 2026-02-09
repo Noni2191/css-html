@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+     background: linear-gradient(
+    135deg,
+    rgba(174, 9, 9, 0.5) 20%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(162, 0, 0, 0.1) 100%
+  );
+}
+.container{
+    background-color: white;
+    padding: 5rem;
+    width: 60rem;
+    border-radius: 15px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 7px 3px 8px 10px rgba(0, 0, 0, 0.2);
+    outline: 2px solid red;
+}
+.heading{
+    font-size: 2.2rem;
+     font-family: "Playwrite NZ Basic", cursive;
+     color: blue;
+}
+.description{
+    font-size: 1rem;
+        font-weight: bold;
+        margin: 1rem 0 3rem;
+}
+.input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+input{
+    padding: 1rem;
+    font-size: 0.8rem;
+    width: 25rem;
+    border-radius: 50px;
+}
+button{
+    padding: 1rem;
+    font-size: 0.8rem;
+    width: 10rem;
+    outline: 1px solid blue;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 50px;
+}
