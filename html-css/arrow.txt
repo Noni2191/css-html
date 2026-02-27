@@ -1,0 +1,63 @@
+arrow functions
+
+A JavaScript function is a reusable block of code designed to perform a specific task. Functions allow developers to organize, modularize, and reuse code, making programs more efficient and easier to debug and maintain. 
+The most common way to define a function is with the function keyword, followed by a name, parentheses for optional parameters, and curly braces {} containing the code to be executed.
+function addNumbers(num1, num2) {
+  return num1 + num2;
+}
+
+// Calling the function
+let result = addNumbers(5, 10);
+console.log(result); // Output: 15
+
+In JavaScript, a parameter is a variable listed in a function's definition that acts as a placeholder for a value that will be provided when the function is called. The actual values passed in during the function call are called arguments.
+Parameters are used to make functions dynamic and reusable by allowing them to operate on different input data each time they are invoked. 
+Definition vs. Invocation: Parameters are part of the function declaration (definition time), while arguments are the actual values supplied when the function is executed (call time).
+// 'name' and 'greeting' are parameters
+function greet(name, greeting) {
+  console.log(greeting + ", " + name);
+}
+
+// 'Alice' and 'Hello' are arguments
+greet("Alice", "Hello");
+
+
+
+A JavaScript return value is the output a function sends back to the code that called it after completing its task. This value is specified using the return statement, which also immediately stops the function's execution.
+
+Purpose: Return values allow functions to perform calculations or operations and communicate the results to the rest of the program, making code modular and reusable.
+Syntax: The return keyword is followed by the value or expression you want to output. For example: return a + b;.
+Default Value: If a function does not have an explicit return statement, or if return is used without a value, the function implicitly returns undefined.
+Data Types: A function can return a value of any data type, including primitive types (numbers, strings, booleans), objects, arrays, and even other functions.
+Single Value Limit: While a function can only return a single value directly, you can wrap multiple values within an array or an object to return them together.
+function multiply(a, b) {
+  // This line returns the product of a and b
+  return a * b; 
+  // Any code after this return statement will not run
+}
+
+// The returned value (20) is stored in the 'result' variable
+let result = multiply(4, 5); 
+console.log(result); // Output: 20
+
+
+
+JavaScript arrow functions provide a concise syntax for writing function expressions	
+
+const functionName = (parameters) => expressionOrBlock;
+
+
+// Traditional function expression
+const sumTraditional = function(a, b) {
+  return a + b;
+};
+
+// Arrow function (concise syntax)
+const sumArrow = (a, b) => a + b;
+
+const calculate = (a, b) => {
+  const result = a + b;
+  console.log('Calculation complete'); // Multiple statements
+  return result;
+};
+

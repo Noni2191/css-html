@@ -1,0 +1,50 @@
+// Regular Function with Parameters, Conditionals, Loop, and Return Value
+
+function calculateStudentResults(studentName, scores) {
+    
+    // Loop through scores to calculate total
+    let total = 0;
+
+    for (let i = 0; i < scores.length; i++) {
+        total += scores[i];
+    }
+
+    // Calculate average
+    let average = total / scores.length;
+
+    // Conditional statement to determine grade
+    let grade;
+
+    if (average >= 70) {
+        grade = "A";
+    } else if (average >= 60) {
+        grade = "B";
+    } else if (average >= 50) {
+        grade = "C";
+    } else {
+        grade = "Fail";
+    }
+
+    // Return value
+    return `${studentName} scored an average of ${average.toFixed(2)} and got grade ${grade}`;
+}
+
+
+// Arrow Function Example
+const checkPassStatus = (average) => {
+    return average >= 50 ? "Passed" : "Failed";
+};
+
+
+// Calling the function
+let studentScores = [80, 65, 70, 90, 55];
+
+let result = calculateStudentResults("Nexus", studentScores);
+
+console.log(result);
+
+
+// Using arrow function
+let avg = studentScores.reduce((a, b) => a + b) / studentScores.length;
+
+console.log(`Pass Status: ${checkPassStatus(avg)}`);

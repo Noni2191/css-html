@@ -1,0 +1,63 @@
+JavaScript has two primary categories of data types: primitive (representing single, immutable values) and non-primitive or reference (representing more complex, mutable values)
+Primitive Data Types
+Non-Primitive Data Type
+
+
+Primitive types are the most basic data types and are immutable. 
+
+String: Represents textual data and is enclosed in quotes (single, double, or backticks).
+let greeting = "Hello, world!";
+let name = 'Alice';
+let phrase = `The name is ${name}`; // using backticks for template literals
+
+Number: Represents both integer and floating-point numbers
+let count = 42;
+let price = 19.99;
+let notANumber = NaN; // Special numeric value for computational errors
+
+Boolean: Represents a logical entity with only two values: true or false
+let isActive = true;
+let hasPermission = false;
+
+Undefined: The value automatically assigned to a variable that has been declared but not assigned a value.
+let data; // Value is undefined
+
+Null: Represents the intentional absence of any value or object reference. It is an explicitly assigned value.
+let user = null; // Explicitly stating no user is assigned yet
+
+Symbol: A unique and immutable primitive value often used as an identifier for object properties (introduced in ES6).
+const uniqueId = Symbol("id");
+
+BigInt: Represents whole numbers larger than the standard Number type can safely store (introduced in ES2020).
+let largeNumber = 1234567890123456789012345678901234567890n; // 'n' at the end indicates a BigInt
+
+
+
+
+
+
+
+Non-Primitive Data Type (Reference Types)
+Objects are used to store collections of data and more complex entities
+
+Object: A collection of key-value pairs. Arrays and functions are technically a type of object.
+let person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 30
+};
+
+Array: A special type of object used to store ordered collections of values, indexed by numbers.
+let colors = ["Red", "Green", "Blue"];
+let mixedArray = [1, "hello", true];
+
+Function: A block of reusable code that can be assigned to variables and passed as arguments, making it an object type in JavaScript.
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+
+You can use the typeof operator to check the data type of a value:
+console.log(typeof 42);        // Output: "number"
+console.log(typeof "hello");   // Output: "string"
+console.log(typeof null);      // Output: "object" (a historical quirk of JavaScript)
+console.log(typeof {a: 1});    // Output: "object"
