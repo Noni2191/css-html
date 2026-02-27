@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1 id="title">Welcome to My Website</h1>
+    <button id="btn">Click Me</button> -->
+    <p id="message">Welcome</p>
+    <button id="changeBtn">Change Text</button>
+    <script>
+        // let title = document.getElementById("title");
+        // title.textContent = "Whats's up everyone?";
+        let message = document.getElementById("message");
+        let button = document.getElementById("changeBtn");
+        button.addEventListener("click", function(){
+            message.textContent = "You clicked the button!"
+        })
+    </script>
+</body>
+</html>
