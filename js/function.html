@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <button onclick="change()">click me </button>
+    <script>
+        function hisAge(birthYear){
+            return 2026 - birthYear;
+        }
+        let result = hisAge(1990);
+        console.log(result)
+
+        function change(){
+            return document.getElementById("demo").innerHTML = "hello world";
+        }
+
+        // Arrow function
+        const hisAge2 = birthYear => 2050 - birthYear;
+        let result2 = hisAge2(1990);
+        console.log(result2)
+    </script>
+</body>
+</html>
