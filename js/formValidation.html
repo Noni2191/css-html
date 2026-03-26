@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <form id="myForm">
+        <input type="text" id="username" placeholder="Enter username">
+        <input type="email" id="email" placeholder="Enter email">
+        <button type="submit">Submit</button>
+    </form>
+    form -->
+    <!-- <p id="error"></p> -->
+<form id="myForm">
+    <input type="text" id="name" placeholder="Enter name"><br><br>
+    <input type="text" id="email" placeholder="Enter email"><br><br>
+    <input type="password" id="password" placeholder="Enter password"><br><br>
+    <input type="password" id="confirmPassword" placeholder="Confirm password"><br><br>
+    <input type="number" id="age" placeholder="Enter age"><br><br>
+    <button type="submit">Submit</button>
+</form>
+<p id="message"></p>
+
+    <script>
+const form = document.getElementById("myForm");
+const message = document.getElementById("message");
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
+  const confirmPassword = document.getElementById("confirmPassword").value;
+  const age = document.getElementById("age").value;
+
+  let errors = [];
+
+  // Name validation
+  if (name === "") {
+    errors.push("Name is required");
+  }
+
+  // Email validation (must be gmail)
+  if (!email.endsWith("@gmail.com")) {
+    errors.push("Email must be a Gmail address");
+  }
+
+  // Password validation (strong password)
+  const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).+$/;
+
+  if (!passwordPattern.test(password)) {
+    errors.push("Password must include uppercase, lowercase, number, and special character");
+  }
+
+  // Confirm password
+  if (password !== confirmPassword) {
+    errors.push("Passwords do not match");
+  }
+
+  // Age validation
+  if (age === "" || age <= 0) {
+    errors.push("Enter a valid age");
+  }
+
+  // Show errors if any
+  if (errors.length > 0) {
+    message.style.color = "red";
+    message.textContent = errors.join(", ");
+    return;
+  }
+
+  // Final age check
+  if (age >= 18) {
+    message.style.color = "green";
+    message.textContent = "Weldone bruh! Your form is valid ";
+  } else {
+    message.style.color = "orange";
+    message.textContent = "You are a minor ";
+  }
+});
+
+
+        // const form = document.getElementById('myForm');
+
+        // form.addEventListener("submit", function(event){
+        //     event.preventDefault(); // Stop default form submission
+
+        //     console.log("Form submitted!");
+        // })
+    </script>
+</body>
+</html>
