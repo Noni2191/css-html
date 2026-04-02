@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibas Dining | Premium Restaurant Experience</title>
+    <!-- SEO & Icons -->
+    <meta name="description" content="Experience high-end culinary arts with interactive booking and ordering.">
+    <link rel="stylesheet" href="ass.css">
+    <!-- FontAwesome for icons (Menu, Cart, Theme Toggle, etc.) -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <!-- AOS Library for Scroll Animations -->
+    <link rel="stylesheet" href="https://unpkg.com" />
+</head>
+<body>
+
+    <!-- ============================================= -->
+    <!-- 1. STICKY NAVBAR                              -->
+    <!-- ============================================= -->
+    <header class="navbar" id="main-navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">SAVOR<span>.</span></a>
+            
+            <nav class="nav-links" id="nav-links">
+                <a href="#hero" class="active">Home</a>
+                <a href="#menu">Menu</a>
+                <a href="#reservation">Reservation</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <!-- Cart Trigger -->
+                <button id="cart-icon" aria-label="Open cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </button>
+                <!-- Mobile Menu Hamburger -->
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================= -->
+    <!-- 2. FULLSCREEN HERO SECTION                    -->
+    <!-- ============================================= -->
+    <section id="hero" class="hero-section">
+        <!-- Parallax Background / Video Container -->
+        <div class="hero-bg">
+            <!-- For background video, uncomment below: -->
+            <!-- <video autoplay muted loop playsinline src="assets/hero-video.mp4"></video> -->
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="Restaurant Interior">
+        </div>
+        
+        <div class="hero-content">
+            <h1 class="reveal-text">Crafting Unforgettable Culinary Memories</h1>
+            <p class="reveal-text-slow">Experience premium dining with a modern, interactive touch.</p>
+            <div class="hero-ctas">
+                <a href="#menu" class="btn btn-primary">Explore Menu</a>
+                <a href="#reservation" class="btn btn-secondary">Reserve Table</a>
+            </div>
+        </div>
+        
+        <!-- Scroll Down Indicator -->
+        <div class="scroll-down">
+            <span>Scroll</span>
+            <div class="arrow"></div>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- 3. SMART MENU SYSTEM (Dynamic API Fetch)       -->
+    <!-- ============================================= -->
+    <section id="menu" class="menu-section" data-aos="fade-up">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Exquisite Menu</h2>
+                <p>Dynamically sourced and curated by our world-class chefs.</p>
+            </div>
+
+            <!-- Category Tabs -->
+            <div class="menu-tabs">
+                <button class="tab-btn active" data-category="all">All Items</button>
+                <button class="tab-btn" data-category="starters">Starters</button>
+                <button class="tab-btn" data-category="meals">Main Meals</button>
+                <button class="tab-btn" data-category="drinks">Drinks</button>
+                <button class="tab-btn" data-category="desserts">Desserts</button>
+            </div>
+
+            <!-- Menu Grid (Will be populated via JS from API) -->
+            <div class="menu-grid" id="menu-container">
+                <!-- Fallback/Skeleton Loader while JS fetches API -->
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- 4. RESERVATION SYSTEM                         -->
+    <!-- ============================================= -->
+    <section id="reservation" class="reservation-section" data-aos="fade-up">
+        <div class="container">
+            <div class="reservation-wrapper">
+                <div class="reservation-info">
+                    <h2>Book A Table</h2>
+                    <p>Secure your high-end dining experience. Automated slots and instant confirmation.</p>
+                </div>
+                
+                <form id="reservation-form" class="interactive-form">
+                    <div class="form-group">
+                        <label for="res-name">Full Name</label>
+                        <input type="text" id="res-name" required placeholder="John Doe">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="res-date">Date</label>
+                        <input type="date" id="res-date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="res-time">Time Slot</label>
+                        <select id="res-time" required>
+                            <option value="" disabled selected>Select a time</option>
+                            <option value="17:00">5:00 PM</option>
+                            <option value="18:30">6:30 PM</option>
+                            <option value="20:00">8:00 PM</option>
+                            <option value="21:30">9:30 PM</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="res-guests">Guests</label>
+                        <input type="number" id="res-guests" min="1" max="10" placeholder="Number of guests" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-block">Complete Reservation</button>
+                </form>
+
+                <!-- Reservation Success Message (Hidden by default) -->
+                <div id="reservation-success" class="success-message hidden">
+                    <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+                    <h3>Reservation Confirmed!</h3>
+                    <p>We look forward to serving you. A confirmation has been sent to your email.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- 5. REALISTIC CONTACT EXPERIENCE               -->
+    <!-- ============================================= -->
+    <section id="contact" class="contact-section" data-aos="fade-up">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>We are ready to attend to your special requests and inquiries.</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Click-to-call & Info UI -->
+                <div class="contact-info">
+                    <div class="info-card">
+                        <i class="fas fa-phone-alt"></i>
+                        <div class="info-text">
+                            <h4>Call Us Directly</h4>
+                            <a href="tel:+1234567890" class="click-to-call">+1 (234) 567-890</a>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info-text">
+                            <h4>Email Us</h4>
+                            <a href="mailto:info@savor.com">info@savor.com</a>
+                        </div>
+                    </div>
+                    <!-- Embedded Map Container -->
+                    <div class="map-container">
+                        <iframe 
+                            src="https://google.com" 
+                            width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <!-- Styled Contact Form -->
+                <div class="contact-form-wrapper">
+                    <form id="contact-form" class="interactive-form">
+                        <div class="form-group">
+                            <label for="contact-name">Name</label>
+                            <input type="text" id="contact-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email Address</label>
+                            <input type="email" id="contact-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Message</label>
+                            <textarea id="contact-message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- 6. SLIDE-IN CART SIDEBAR (Order System)       -->
+    <!-- ============================================= -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Order</h3>
+            <button id="close-cart" aria-label="Close cart">&times;</button>
+        </div>
+        
+        <!-- Cart Items List (Dynamic via JS) -->
+        <div class="cart-items" id="cart-items-container">
+            <!-- Example of what a generated dynamic item will look like -->
+            <!-- 
+            <div class="cart-item">
+                <div class="cart-item-details">
+                    <h4>Ribeye Steak</h4>
+                    <p>$35.00</p>
+                </div>
+                <div class="cart-item-qty">
+                    <button class="qty-btn minus">-</button>
+                    <span>1</span>
+                    <button class="qty-btn plus">+</button>
+                </div>
+            </div> 
+            -->
+            <p class="empty-cart-msg">Your cart is empty. Start adding some delicious meals!</p>
+        </div>
+
+        <!-- Cart Footer / Total -->
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">$0.00</span>
+            </div>
+            <button class="btn btn-block checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+    <!-- Dark overlay for when the cart is active -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- ============================================= -->
+    <!-- 7. ITEM PREVIEW MODAL                         -->
+    <!-- ============================================= -->
+    <div class="modal" id="item-modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal">&times;</button>
+            <div class="modal-grid">
+                <div class="modal-image">
+                    <img id="modal-img" src="" alt="Menu Item Large View">
+                </div>
+                <div class="modal-details">
+                    <h2 id="modal-title">Item Title</h2>
+                    <p id="modal-description">Detailed item description will show up here. Made from fresh, organic ingredients sourced locally.</p>
+                    <div class="modal-footer">
+                        <span class="modal-price" id="modal-price">$0.00</span>
+                        <button class="btn btn-primary" id="modal-add-btn">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- FOOTER                                        -->
+    <!-- ============================================= -->
+    <footer class="footer">
+        <p>&copy; 2026 SAVOR Restaurant. All rights reserved.</p>
+    </footer>
+
+    <!-- AOS (Animate on Scroll) JavaScript library -->
+    <script src="https://unpkg.com"></script>
+    <script>
+        // Initializing the scroll animation library
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+    <!-- Custom Main JS (For the next AI to fill out) -->
+    <script src="ass.js"></script>
+</body>
+</html>

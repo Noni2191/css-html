@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIBAS CORNER | Premium Dining Experience</title>
+    <!-- Fonts & Icons -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+<div class="checkout-modal">
+    <div class="checkout-box">
+        <h2>Confirm Your Order</h2>
+        <p class="checkout-summary"></p>
+        <button class="confirm-order">Confirm Order</button>
+        <button class="close-checkout">Cancel</button>
+    </div>
+</div>
+    <!-- Sticky Navbar -->
+    <nav class="navbar">
+        <div class="logo">BIBAS<span>.</span></div>
+        <ul class="nav-links">
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button id="theme-btn">🌓</button>
+            <button class="btn-cart">Order Now</button>
+        </div>
+    </nav>
+
+    <!-- Fullscreen Hero -->
+    <header class="hero">
+        <div class="hero-visual">
+            <div class="overlay"></div>
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="https://mixkit.co" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-content">
+            <h1 class="reveal-text">Elevated Dining <br> <i>Reimagined.</i></h1>
+            <p class="fade-in">Experience culinary excellence in every bite.</p>
+            <div class="hero-btns">
+                <a href="#menu" class="btn-outline">View Menu</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Smart Menu System -->
+    <section id="menu" class="section">
+        <div class="menu-tabs">
+            <button class="tab-btn active" data-id="all">All Items</button>
+            <button class="tab-btn" data-id="starters">Starters</button>
+            <button class="tab-btn" data-id="meals">Main Course</button>
+        </div>
+        <div class="menu-grid"></div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay"></div>
+    <aside class="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Order</h2>
+            <button class="close-cart">&times;</button>
+        </div>
+        <div class="cart-items"></div>
+        <div class="cart-footer">
+            <div class="total-row">Total: <span class="cart-total">#1000</span></div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </aside>
+
+    <script src="project.js"></script>
+</body>
+</html>

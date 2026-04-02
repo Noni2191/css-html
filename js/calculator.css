@@ -1,0 +1,101 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Body */
+body {
+  background: linear-gradient(135deg, #1e1e2f, #2c2c54);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Calculator container */
+.calculator {
+  background: #12121c;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  width: 300px;
+}
+
+/* Display */
+#display {
+  width: 100%;
+  height: 60px;
+  border: none;
+  outline: none;
+  background: #1f1f2e;
+  color: #fff;
+  font-size: 2rem;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+/* Buttons grid */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* General button style */
+button {
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: #2e2e44;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Hover effect */
+button:hover {
+  background: #3f3f5c;
+  transform: scale(1.05);
+}
+
+/* Active click */
+button:active {
+  transform: scale(0.95);
+}
+
+/* Operator buttons */
+button:nth-child(4n),
+button:nth-child(3),
+button:nth-child(2) {
+  background: #ff9f43;
+  color: #000;
+}
+
+button:nth-child(4n):hover,
+button:nth-child(3):hover,
+button:nth-child(2):hover {
+  background: #ffb86b;
+}
+
+/* Equal button */
+button:last-child,
+button:nth-last-child(3) {
+  background: #00d2d3;
+  color: #000;
+}
+
+button:last-child:hover,
+button:nth-last-child(3):hover {
+  background: #54e0e1;
+}
+
+/* Zero button spans 2 columns */
+.zero {
+  grid-column: span 2;
+}
